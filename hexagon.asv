@@ -1,0 +1,10 @@
+function hexagon(size,x0,y0)
+    %cote= side size;,(x0,y0) exagon center coordinates;
+    x=size*[-1 -0.5 0.5 1 0.5 -0.5 -1]+x0;
+    y=size*sqrt(3)*[0 -0.5 -0.5 0 0.5 0.5 0]+y0;
+    figure;
+    plot(x,y);
+    axis([ x0-size x0+size y0-size y0+size]);
+    txt = texlabel("\frac{\sqrt{3}a}}{2},\frac{a}{2}");
+    text(size*0.5,size*sqrt(3)*0.5,txt);
+end
