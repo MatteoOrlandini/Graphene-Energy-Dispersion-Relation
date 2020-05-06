@@ -63,12 +63,10 @@ text(-max_kx, 0, Eg2Dp_M_point, '$M$', 'VerticalAlignment', 'top', 'FontSize', 1
 [x, y] = hexagon2(a, 0, 0);
 ax2= axes('Position', [0.65 0.88 0.1 0.1]);
 title(ax2, "Unit cell");
-plot(ax2, x, y, 'b');
-hold on;
-arrow_x = [0 x(3)];
-arrow_y = [0   y(3)];
-plot (ax2,arrow_x, arrow_y, 'b');
-text (x(3)/2, y(3)/2, '$a$', 'FontSize', 9, 'Interpreter', 'latex', 'VerticalAlignment', 'bottom');
-text(0,0, '$\Gamma$', 'Interpreter','latex',  'FontSize', 10, 'LineWidth', 9);
+plot(ax2, x,y);
+arrow_x = [0 0.5];
+Y = [0   0.5];
+annotation('arrow',X,Y);
+text(0,0, '$\Gamma$', 'Interpreter','latex',  'FontSize', 9, 'LineWidth', 9);
 text(a*sqrt(3)*0.5, 0.5, '$K$', 'HorizontalAlignment', 'left', 'Interpreter','latex',  'FontSize', 9, 'LineWidth', 9);
 text(a*sqrt(3)*0.5, 0, '$M$', 'HorizontalAlignment', 'left', 'Interpreter','latex', 'FontSize', 9, 'LineWidth', 9);
