@@ -1,34 +1,53 @@
+# Tight Binding Calculation 
+In carbon materials except for diamond, the π electrons are valence electrons which are relevant for the transport. A tight binding calculation provides insights for understaing the electronig structure of the π energy levels or bands for graphite.
+Because of the translational simmetry of the unit cells in the direction of the lattice vectors <img src="https://render.githubusercontent.com/render/math?math=\vec{a}_i"/> (i = 1, 2, 3), any wave function of the lattice <img src="https://render.githubusercontent.com/render/math?math=\Psi"/> should satisfy Bloch theorem <img src="https://render.githubusercontent.com/render/math?math=T_{\vec{a}_i}\Psi=e^{i\vec{k}\cdot\vec{a}_i}\Psi"/> , where ![T_{\vec{a}_i}](https://render.githubusercontent.com/render/math?math=T_%7B%5Cvec%7Ba%7D_i%7D) is a translational operation along the lattice vector ![\vec{a}_i](https://render.githubusercontent.com/render/math?math=%5Cvec%7Ba%7D_i) and ![\vec{k}](https://render.githubusercontent.com/render/math?math=%5Cvec%7Bk%7D) is the wave vector.  
+
+A form which satisfies the equation is based on the j-th atomic orbital in the unit cell (or atom). A tight binding, Bloch function <img src="https://render.githubusercontent.com/render/math?math=\Phi_j(\vec{k},\vec{r})"/> is given by <img src="https://render.githubusercontent.com/render/math?math=\Phi_j(\vec{k},\vec{r})=\frac{1}{N}\sum_R^N{e^{i\vec{k}\cdot\vec{R}}\varphi_j(\vec{r}-\vec{R}), j=1,...,N)}"/>. Here <img src="https://render.githubusercontent.com/render/math?math=\vec{R}"/> is the position of the atom and <img src="https://render.githubusercontent.com/render/math?math=\varphi_j"/> denotes the atomic wavefunction in state j. The boundary condition of the Bloch theorem gives the wave number <img src="https://render.githubusercontent.com/render/math?math=k=\frac{2p\pi}{Ma_i}, (p=0,1,...,M-1), (i=1,...,3)"/>.  
+
+The eigenfunctions in the solid <img src="https://render.githubusercontent.com/render/math?math=\Psi_j(\vec{k},\vec{r}), (j=1,...,n)"/>, where n is the number of Bloch functions, are expressed by a linear combination of Bloch functions <img src="https://render.githubusercontent.com/render/math?math=\Phi_{j^{'}}(\vec{k},\vec{r}), (j=1,...,n)"/> as follows: <img src="https://render.githubusercontent.com/render/math?math=\Psi_j(\vec{k},\vec{r})=\sum_{j^{'}=1}^n{C_{jj^{'}}(\vec{k})\Phi_j^{'}(\vec{k},\vec{r})}"/> where <img src="https://render.githubusercontent.com/render/math?math=C_{jj^{'}}(\vec{k})"/> are coefficients to be determined.  
+
+The j-th eigenvalue <img src="https://render.githubusercontent.com/render/math?math=E_j(\vec{k}) (j=1,...,n)"/> as a function of <img src="https://render.githubusercontent.com/render/math?math=\vec{k}"/> is given by <img src="https://render.githubusercontent.com/render/math?math=E_j(\vec{k})=\frac{\langle \Psi_j|\mathcal{H}|\Psi_j  \rangle}{\langle \Psi_j|\Psi_j \rangle}=\frac{\int \Psi_j^{*}\mathcal{H}\Psi_j d\textbf{r}}{\int \Psi_j^{*}\Psi_j d\textbf{r}}"/> where <img src="https://render.githubusercontent.com/render/math?math=\mathcal{H}"/> is the Hamiltonian of the solid. Sobstituting the equations we obtain <img src="https://render.githubusercontent.com/render/math?math=E_i(\vec{k})=\frac{\sum_{j,j^'=1}^n{C_{ij^{*}}C_{ij^{'}}\langle\Phi_j|\mathcal{H}|\Phi_{j^{'}}}\rangle} {\sum_{j,j^'=1}^n{C_{ij^{*}}C_{ij^{'}}\langle\Phi_j|\Phi_{j^{'}}}\rangle}=\frac{\sum_{j,j^'=1}^n{\mathcal{H}_{jj^{'}}C_{ij^{*}}C_{ij^{'}}}} {\sum_{j,j^'=1}^n{\mathcal{S}_{jj^{'}}C_{ij^{*}}C_{ij^{'}}}}"/> where the integrals over the Bloch orbitals, <img src="https://render.githubusercontent.com/render/math?math=\mathcal{H}_{j,j^{'}}(\vec{k})"/> and <img src="https://render.githubusercontent.com/render/math?math=\mathcal{S}_{j,j^{'}}(\vec{k})"/> are called transfer integral matrices and overlap integral matrices, respectively, which are defined by <img src="https://render.githubusercontent.com/render/math?math=\mathcal{H}_{jj^{'}}(\vec{k})=\langle\Phi_j|\mathcal{H}|\Phi_{j^{'}}\rangle"/> and <img src="https://render.githubusercontent.com/render/math?math=\mathcal{S}_{jj^{'}}(\vec{k})=\langle\Phi_j|\Phi_{j^{'}}\rangle"/>.
+
+# Two-Dimensional Graphite
 Graphite is a three-dimensional (3D) layered hexagonal lattice of carbon atoms. A single layer of graphite, forms a two-dimensional (2D) material, called 2D graphite or graphene layer. Graphite surface lattice is hexagonal and is defined by the unit vector 
 <img src="https://render.githubusercontent.com/render/math?math=\vec{a}=\left(\frac{\sqrt{3}}{2}a,\frac{a}{2}\right)"/> 
-as shown in the image below. 
+as shown in the image below.  
 
-Solving the secular equation 
-<img src="https://render.githubusercontent.com/render/math?math=\det(\mathcal{H}-E\mathcal{S})=0"/>
-, the eigenvalue 
-<img src="https://render.githubusercontent.com/render/math?math=E(\vec{k})"/> 
-are obtained as a function 
-<img src="https://render.githubusercontent.com/render/math?math=\omega(\vec{k}), k_x"/> 
-and 
-<img src="https://render.githubusercontent.com/render/math?math=k_y"/>:
-<img src="https://render.githubusercontent.com/render/math?math=E_{g2D}(\vec{k})=\frac{\epsilon_{2p}\pm t\omega(\vec{k})}{1 \pm s\omega(\vec{k})}"/>
+![](https://github.com/MatteoOrlandini/Graphite2D_Energy_Dispersion_Relation/blob/master/unitary_cell.png)
+
+*(a)The unit cell and (b) Brillouin zone of two dimensional graphite are shown as the dotted rombus and the shaded hexagon, respectively. <img src="https://render.githubusercontent.com/render/math?math=\vec{a}_i"/> and <img src="https://render.githubusercontent.com/render/math?math=\vec{b}_i"/> (i = 1, 2) are unit vectors and reciprocal lattice vectors, respectively. Energy dispersion relation are obtained along the perimeter of the dotted triangle connecting the high simmetry point <img src="https://render.githubusercontent.com/render/math?math=\Gamma"/>, K and M.*
+
+# π bands for two-dimensional graphite
+Two Bloch functions, <img src="https://render.githubusercontent.com/render/math?math=T_{\vec{a}_i}\Psi=e^{i\vec{k}\cdot\vec{a}_i}\Psi"/>, constructed from atomic orbitals for the two inequivalent carbon atoms at A and B in figure above, provide the basis functions for 2D graphite. When we consider only nearest-neighbor interactions, then there is only an integration over a single atom in <img src="https://render.githubusercontent.com/render/math?math=\mathcal{H}_{AA}"/> and <img src="https://render.githubusercontent.com/render/math?math=\mathcal{H}_{BB}"/> as shown in <img src="https://render.githubusercontent.com/render/math?math=\mathcal{H}_{AA}=\frac{1}{N}\sum_{(R,R^{'})}{e^{ik(R-R^{'})}\langle \varphi_A(r-R^{'})|\mathcal{H}|\varphi_A(r-R)\rangle}=\frac{1}{N}\sum_{(R=R^{'})}{\epsilon_{2p}}+\frac{1}{N}\sum_{(R=R^{'}+\pm a)}{e^{(\pm ika)}\langle \varphi_A(r-R^{'})|\mathcal{H}|\varphi_A(r-R)\rangle}"/> and thus  <img src="https://render.githubusercontent.com/render/math?math=\mathcal{H}_{AA}=\mathcal{H}_{BB}=\epsilon_{2p}"/>. For the off-diagonal matrix element <img src="https://render.githubusercontent.com/render/math?math=\mathcal{H}_{AB}"/>, we must consider the three nearest-neighbor B atoms relative to an A atom, which are denoted by the vectors <img src="https://render.githubusercontent.com/render/math?math=\vec{R}_1"/>, <img src="https://render.githubusercontent.com/render/math?math=\vec{R}_2"/> and <img src="https://render.githubusercontent.com/render/math?math=\vec{R}_3"/>. We then consider the contribution to <img src="https://render.githubusercontent.com/render/math?math=\mathcal{H}_{AB}(r)=\frac{1}{N}\sum_R\{e^{ika/2}\langle \varphi_A(r-R)|\mathcal{H}|\varphi_B(r-R-a/2) \rangle+e^{-ika/2} \langle \varphi_A(r-R)|\mathcal{H}|\varphi_B(r-R%2Ba/2) \rangle \}=2t\cos(ka/2)"/> from <img src="https://render.githubusercontent.com/render/math?math=\vec{R}_1"/>, <img src="https://render.githubusercontent.com/render/math?math=\vec{R}_2"/> and <img src="https://render.githubusercontent.com/render/math?math=\vec{R}_3"/> as follows <img src="https://render.githubusercontent.com/render/math?math=\mathcal{H}_AB=t(e^{i\vec{k}\cdot\vec{R}_1}%2Be^{i\vec{k}\cdot\vec{R}_2}%2Be^{i\vec{k}\cdot\vec{R}_3})=tf(k)"/> where t is <img src="https://render.githubusercontent.com/render/math?math=t=\langle\varphi_A(r-R)|\mathcal{H}|\varphi_B(r%2BR\pm a/2\rangle"/>.  
+
+Solving the secular equation <img src="https://render.githubusercontent.com/render/math?math=\det(\mathcal{H}-E\mathcal{S})=0"/>, the eigenvalue <img src="https://render.githubusercontent.com/render/math?math=E(\vec{k})"/> 
+are obtained as a function <img src="https://render.githubusercontent.com/render/math?math=\omega(\vec{k}), k_x"/> 
+and <img src="https://render.githubusercontent.com/render/math?math=k_y"/>: <img src="https://render.githubusercontent.com/render/math?math=E_{g2D}(\vec{k})=\frac{\epsilon_{2p}\pm t\omega(\vec{k})}{1 \pm s\omega(\vec{k})}"/>
 where the + signs in the numerator and denominator go together giving the bonding <img src="https://render.githubusercontent.com/render/math?math=\pi"/> energy band, and likewise for the - signs, which give the antibonding 
-<img src="https://render.githubusercontent.com/render/math?math=\pi^*"/>
-band, while the function 
-<img src="https://render.githubusercontent.com/render/math?math=\omega(\vec{k})"/>
-is given by:
-<img src="https://render.githubusercontent.com/render/math?math=\omega(\vec{k})=\sqrt{|f(\vec{k}|^2}=\sqrt{1%2B4\cos{\frac{\sqrt{3}k_xa}{2}}%2B\cos{\frac{k_ya}{2}}%2B4\cos^2{\frac{k_ya}{2}}}"/>.
+<img src="https://render.githubusercontent.com/render/math?math=\pi^*"/> band.
 
+* The function <img src="https://render.githubusercontent.com/render/math?math=\omega(\vec{k})"/> is given by: <img src="https://render.githubusercontent.com/render/math?math=\omega(\vec{k})=\sqrt{|f(\vec{k}|^2}=\sqrt{1%2B4\cos{\frac{\sqrt{3}k_xa}{2}}%2B\cos{\frac{k_ya}{2}}%2B4\cos^2{\frac{k_ya}{2}}}"/>
+* t is the transfer integral <img src="https://render.githubusercontent.com/render/math?math=t=\langle\varphi_A(r-R)|\mathcal{H}|\varphi_B(r%2BR\pm a/2\rangle"/>
+* s is the overlap integral between the nearest A and B atoms, <img src="https://render.githubusercontent.com/render/math?math=s=\langle\varphi_A(r-R)|\varphi_B(r-R\pm a/2\rangle"/>.  
+
+# Application preview
 The following image shows the application preview. You can modify the parameters of equation 
-<img src="https://render.githubusercontent.com/render/math?math=E_{g2D}(\vec{k})=\frac{\epsilon_{2p}\pm t\omega(\vec{k})}{1 \pm s\omega(\vec{k})}"/>
-where t is the transfer integral 
-<img src="https://render.githubusercontent.com/render/math?math=t=\langle\varphi_A(r-R)|\mathcal{H}|\varphi_B(r%2BR\pm a/2\rangle"/>
-and s is the overlap integral between the nearest A and B atoms, 
-<img src="https://render.githubusercontent.com/render/math?math=s=\langle\varphi_A(r-R)|\varphi_B(r-R\pm a/2\rangle"/>.
+<img src="https://render.githubusercontent.com/render/math?math=E_{g2D}(\vec{k})=\frac{\epsilon_{2p}\pm t\omega(\vec{k})}{1 \pm s\omega(\vec{k})}"/> where t is the transfer integral and s is the overlap integral between the nearest A and B atoms.
 
-The energy dispersion relations in the case of s = 0 are commonly used as a simple approximation for the electronic structure of a graphene layer:
+The energy dispersion relations in the case of <img src="https://render.githubusercontent.com/render/math?math=s=0"/> are commonly used as a simple approximation for the electronic structure of a graphene layer:
 <img src="https://render.githubusercontent.com/render/math?math=E_{g2D}(k_x,k_y)=\pm t{\sqrt{1%2B4\cos{\frac{\sqrt{3}k_xa}{2}}%2B\cos{\frac{k_ya}{2}}%2B4\cos^2{\frac{k_ya}{2}}}}"/>
 
 As you can see, in the image are shown three points <img src="https://render.githubusercontent.com/render/math?math=\Gamma"/>, M and K that are high simmetry points shown in the triangle <img src="https://render.githubusercontent.com/render/math?math=\Gamma M K"/> in the little hexagon.
 
 ![](https://github.com/MatteoOrlandini/Graphite2D_Energy_Dispersion_Relation/blob/master/app_image.png)
 
+# MATLAB Graphic Application
+You can download the installer for the standalone application (without Matlab) [here](https://github.com/MatteoOrlandini/Graphite2D_Energy_Dispersion_Relation/blob/master/EnergyDispersionRelation2DGraphite/for_redistribution/MyAppInstaller_web.exe) using "MyAppInstaller_web.exe". 
+## How to intall
+1. Open "MyAppInstaller_web.exe"
+2. You need to install the [MATLAB Runtime](https://it.mathworks.com/products/compiler/matlab-runtime.html) to run this app. 
+3. Install the application COVID19
+4. Run the app
+
+# Bibliography
+R. Saito, G. Dresselhaus - Physical properties of carbon nanotubes
