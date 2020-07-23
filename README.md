@@ -42,7 +42,7 @@ As you can see, in the image are shown three points <img src="https://render.git
 ![](https://github.com/MatteoOrlandini/Graphite2D_Energy_Dispersion_Relation/blob/master/app_image.png)
 
 # MATLAB Graphic Application
-You can download the installer for the standalone application (without Matlab) [here](https://github.com/MatteoOrlandini/Graphite2D_Energy_Dispersion_Relation/blob/master/EnergyDispersionRelation2DGraphite/for_redistribution/MyAppInstaller_web.exe) using "MyAppInstaller_web.exe". 
+You can download the installer for the standalone application (without Matlab) [here](https://github.com/MatteoOrlandini/Graphite2D_Energy_Dispersion_Relation/blob/master/Graphene-Energy-Dispersion-Relation/for_redistribution/MyAppInstaller_web.exe) using "MyAppInstaller_web.exe". 
 ## How to intall
 1. Open "MyAppInstaller_web.exe"
 2. You need to install the [MATLAB Runtime](https://it.mathworks.com/products/compiler/matlab-runtime.html) to run this app. 
